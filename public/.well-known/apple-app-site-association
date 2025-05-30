@@ -1,0 +1,11 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+           {
+             "appID": "4924V9U345.org.reactjs.native.example.Onvi",
+             "paths": [ "/home/*", "/settings/*" ]
+           }
+       ]
+   }
+}

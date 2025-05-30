@@ -1,7 +1,35 @@
-import type { NextConfig } from "next";
+const nextConfig: import('next').NextConfig = {
+    // Recommended for static deployments
 
-const nextConfig: NextConfig = {
-  /* config options here */
+    async rewrites() {
+        return [
+            {
+                source: '/.well-known/:path*',
+                destination: '/.well-known/:path*',
+            },
+        ];
+    },
+
+    async headers() {
+        return [
+            {
+                source: '/.well-known/apple-app-site-association',
+                headers: [
+                    {
+                        key: 'Content-Type',
+                        value: 'application/json',
+                    },
+                ],
+            },
+            {
+                source: '/.well-known/assetlinks.json',
+                headers: [
+                    { key: 'Content-Type', value: 'application/json' }
+                ],
+            }
+        ];
+    },
 };
 
 export default nextConfig;
+
