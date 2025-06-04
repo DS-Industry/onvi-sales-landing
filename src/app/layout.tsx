@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "next-themes";
+import Header from "@/components/Header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,17 +38,16 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
-        <link rel="apple-touch-icon" sizes="180x180" href="/onvi-mobile-landing/apple-touch-icon.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/onvi-mobile-landing/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/onvi-mobile-landing/favicon-16x16.png" />
-        <link rel="manifest" href="/onvi-mobile-landing/site.webmanifest" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

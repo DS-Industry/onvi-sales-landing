@@ -4,17 +4,21 @@ import Image from 'next/image';
 import { Carousel } from 'antd';
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 import { useRef } from 'react';
-import AppScreen1 from '@images/AppScreen1.jpg';
-import AppScreen2 from '@images/AppScreen2.jpg';
-import AppScreen3 from '@images/AppScreen3.jpg';
-import AppScreen4 from '@images/AppScreen4.jpg';
+import AppScreen1 from '@images/DesktopScreen1.png';
+import AppScreen2 from '@images/DesktopScreen2.png';
+import AppScreen3 from '@images/DesktopScreen3.png';
+import AppScreen4 from '@images/DesktopScreen4.png';
+import AppScreen5 from '@images/DesktopScreen5.png';
+import AppScreen6 from '@images/DesktopScreen6.png';
 
-const IMG_SET: Record<string, typeof AppScreen1> = {
+const IMG_SET = [
   AppScreen1,
   AppScreen2,
   AppScreen3,
   AppScreen4,
-};
+  AppScreen5,
+  AppScreen6,
+];
 
 export default function ScreenshotsSection() {
   const carouselRef = useRef<any>(null);
@@ -29,40 +33,41 @@ export default function ScreenshotsSection() {
           </p>
         </div>
 
-        <div className="relative max-w-md mx-auto">
+        <div className="relative max-w-4xl mx-auto">
           {/* Arrows */}
           <button
-            className="absolute top-1/2 -left-6 transform -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow-md z-10 cursor-pointer"
+            className="absolute top-1/2 -left-8 transform -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow-md z-10 cursor-pointer"
             onClick={() => carouselRef.current?.prev()}
             aria-label="Previous Slide"
           >
             <LeftOutlined />
           </button>
           <button
-            className="absolute top-1/2 -right-6 transform -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow-md z-10 cursor-pointer"
+            className="absolute top-1/2 -right-8 transform -translate-y-1/2 bg-white border border-gray-300 rounded-full p-2 shadow-md z-10 cursor-pointer"
             onClick={() => carouselRef.current?.next()}
             aria-label="Next Slide"
           >
             <RightOutlined />
           </button>
 
-          {/* Ant Design Carousel */}
+          {/* Carousel */}
           <Carousel
             ref={carouselRef}
             autoplay
             dots
             draggable
             dotPosition="bottom"
+            className="rounded-2xl overflow-hidden"
           >
-            {[1, 2, 3, 4].map((num) => (
-              <div key={num} className="px-4">
-                <div className="bg-black rounded-3xl p-2 shadow-xl">
+            {IMG_SET.map((img, index) => (
+              <div key={index} className="flex justify-center">
+                <div className="bg-white shadow-xl p-4 rounded-3xl w-full max-w-4xl">
                   <Image
-                    src={IMG_SET[`AppScreen${num}`]}
-                    alt={`App Screenshot ${num}`}
-                    width={300}
-                    height={600}
-                    className="rounded-2xl h-[500px] w-full object-cover"
+                    src={img}
+                    alt={`App Screenshot ${index + 1}`}
+                    width={1200}
+                    height={800}
+                    className="rounded-xl w-full h-[500px] md:h-[600px] object-contain"
                     unoptimized
                   />
                 </div>
