@@ -30,7 +30,7 @@ const SectionTitle: FC<SectionTitleProps> = ({
         {subtitle && (
           <Text
             strong
-            style={{ color: "#0B68E1", fontSize: "16px", display: "block", marginBottom: "8px" }}
+            style={{ color: "#0B68E1", fontSize: "18px", display: "block" }}
           >
             {subtitle}
           </Text>
@@ -39,10 +39,11 @@ const SectionTitle: FC<SectionTitleProps> = ({
         <Title
           level={2}
           style={{
+            marginTop: "0px",
             marginBottom: "16px",
-            color: "var(--color-text, #1F2937)",
+            color: "var(--color-white)",
             fontWeight: 700,
-            fontSize: "2rem",
+            fontSize: "40px",
             lineHeight: 1.3,
           }}
         >

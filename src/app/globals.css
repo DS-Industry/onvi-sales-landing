@@ -1,59 +1,114 @@
+/* globals.css */
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@theme {
-    /* Base colors */
-    --color-transparent: transparent;
-    --color-current: currentColor;
-    --color-black: #000000;
-    --color-white: #ffffff;
+/* ------------------ Light Theme (Default) ------------------ */
+:root {
+  /* Base */
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-white: #000000;
+  --color-black: #ffffff;
 
-    /* Gray scale */
-    --color-gray-50: #f9fafb;
-    --color-gray-100: #f3f4f6;
-    --color-gray-200: #e5e7eb;
-    --color-gray-300: #d1d5db;
-    --color-gray-400: #9ca3af;
-    --color-gray-500: #6b7280;
-    --color-gray-600: #4b5563;
-    --color-gray-700: #374151;
-    --color-gray-800: #1f2937;
-    --color-gray-900: #111827;
-    --color-gray-950: #030712;
+  /* Gray Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
 
-    /* Primary colors */
-    --color-primary: #0B68E1;
-    --color-primary-light: #7173FF;
-    --color-primary-dark: #094DA7;
+  /* Primary */
+  --color-primary: #0B68E1;
+  --color-primary-light: #7173FF;
+  --color-primary-dark: #094DA7;
 
-    /* Secondary colors */
-    --color-secondary: #3D3D3D;
-    --color-secondary-light: #5A5A5A;
-    --color-secondary-dark: #282828;
+  /* Secondary */
+  --color-secondary: #3D3D3D;
+  --color-secondary-light: #5A5A5A;
+  --color-secondary-dark: #282828;
 
-    /* Accent colors */
-    --color-accent: #BFFA00;
-    --color-accent-light: #D0FF40;
-    --color-accent-dark: #A5D800;
+  /* Accent */
+  --color-accent: #BFFA00;
+  --color-accent-light: #D0FF40;
+  --color-accent-dark: #A5D800;
 
-    /* Status colors */
-    --color-success: #10b981;
-    --color-success-light: #34d399;
-    --color-success-dark: #059669;
+  /* Status */
+  --color-success: #10b981;
+  --color-success-light: #34d399;
+  --color-success-dark: #059669;
 
-    --color-warning: #f59e0b;
-    --color-warning-light: #fbbf24;
-    --color-warning-dark: #d97706;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fbbf24;
+  --color-warning-dark: #d97706;
 
-    --color-error: #ef4444;
-    --color-error-light: #f87171;
-    --color-error-dark: #dc2626;
+  --color-error: #ef4444;
+  --color-error-light: #f87171;
+  --color-error-dark: #dc2626;
 
-    --color-info: #3b82f6;
-    --color-info-light: #60a5fa;
-    --color-info-dark: #2563eb;
-    --color-info-100: #dbe6fe;
+  --color-info: #3b82f6;
+  --color-info-light: #60a5fa;
+  --color-info-dark: #2563eb;
+  --color-info-100: #dbe6fe;
 }
 
+/* ------------------ Dark Theme ------------------ */
+[data-theme="dark"],
+.dark {
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
 
+  /* Gray Inverted */
+  --color-gray-50: #0f1115;
+  --color-gray-100: #111827;
+  --color-gray-200: #1f2937;
+  --color-gray-300: #374151;
+  --color-gray-400: #4b5563;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #9ca3af;
+  --color-gray-700: #d1d5db;
+  --color-gray-800: #e5e7eb;
+  --color-gray-900: #f3f4f6;
+  --color-gray-950: #f9fafb;
 
+  /* Primary stays the same (optional) */
+  --color-primary: #094DA7;
+  --color-primary-light: #7173FF;
+  --color-primary-dark: #094DA7;
 
+  /* Secondary changes (for contrast) */
+  --color-secondary: #D0FF40;
+  --color-secondary-light: #BFFA00;
+  --color-secondary-dark: #A5D800;
+
+  /* Accent can pop more on dark */
+  --color-accent: #A5D800;
+  --color-accent-light: #CFFF45;
+  --color-accent-dark: #87B800;
+
+  /* Status colors (optional tweaks for dark mode visibility) */
+  --color-success: #22c55e;
+  --color-success-light: #4ade80;
+  --color-success-dark: #15803d;
+
+  --color-warning: #fbbf24;
+  --color-warning-light: #fde68a;
+  --color-warning-dark: #b45309;
+
+  --color-error: #f87171;
+  --color-error-light: #fecaca;
+  --color-error-dark: #991b1b;
+
+  --color-info: #60a5fa;
+  --color-info-light: #93c5fd;
+  --color-info-dark: #1e40af;
+  --color-info-100: #e0edff;
+}

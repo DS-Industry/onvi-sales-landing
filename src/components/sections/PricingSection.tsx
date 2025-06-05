@@ -1,8 +1,9 @@
 'use client';
 
 import { forwardRef } from 'react';
-import { CheckOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
+import SectionTitle from '../Common/SectionTitle';
+import Link from 'next/link';
 
 type PricingPlan = {
   name: string;
@@ -48,49 +49,64 @@ const plans: PricingPlan[] = [
 
 const PricingSection = forwardRef<HTMLDivElement, PricingSectionProps>((props, ref) => {
   return (
-    <div ref={ref} className="py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900">Тарифные планы</h2>
-          <p className="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
-            Выберите подходящий тариф для вашего автопарка или личного пользования
-          </p>
-        </div>
+    <div ref={ref} className="bg-gray-100">
+      <section
+        id="pricing"
+        className="relative overflow-hidden pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]"
+      >
+        <div className="container">
+          <div className="mb-[60px]">
+            <SectionTitle
+              subtitle="Таблица тарифов"
+              title="Тарифные планы"
+              paragraph="Выберите подходящий тариф для вашего автопарка или личного пользования"
+              center
+            />
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-4 px-4 sm:px-6">
+            {plans.map((plan, index) => (
+              <div
+                key={index}
+                className={`relative bg-gray-50 rounded-lg p-8 flex flex-col justify-between transition-all duration-300 w-full sm:w-[300px] md:w-[350px] lg:w-[400px] min-h-[500px]`}
+              >
+                {plan.highlighted && (
+                  <div className="absolute -right-12 top-14 rotate-90 bg-blue-600 text-white text-sm font-medium px-2 py-1 pr-8 rounded-r">
+                    Recommended
+                  </div>
+                )}
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={
-                `bg-white border rounded-2xl shadow-sm p-6 flex flex-col justify-between transition-all duration-300`+
-                {
-                  'border-info-dark ring-2 ring-info-dark': plan.highlighted,
-                }
-              }
-            >
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 text-center">{plan.name}</h3>
-                <p className="text-center text-3xl font-bold mt-4 mb-6 text-info-dark">{plan.price}</p>
+                <div>
+                  <h3 className="text-2xl font-semibold text-white">{plan.name}</h3>
+                  <p className="text-4xl font-bold mt-4 mb-6 text-gray-900">
+                    {plan.price}{" "}
+                    <span className="text-base font-medium text-gray-500">Per Month</span>
+                  </p>
 
-                <ul className="space-y-3 text-gray-700">
-                  {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2">
-                      <CheckOutlined className="text-green-500 mt-1" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
+                  <h4 className="font-semibold text-white mb-3">Features</h4>
+                  <ul className="space-y-1 text-gray-600">
+                    {plan.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-8 text-center">
+                  <Button
+                    type="primary"
+                    size="large"
+                    className="w-full"
+                    style={{ backgroundColor: "var(--color-primary)", color: "white" }}
+                  >
+                    <Link href="https://app.onvione.ru/register">Purchase Now</Link>
+                  </Button>
+                </div>
               </div>
-
-              <div className="mt-8 text-center">
-                <Button type={plan.highlighted ? 'primary' : 'default'} size="large">
-                  Выбрать план
-                </Button>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 });

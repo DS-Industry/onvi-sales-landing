@@ -1,19 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
-import DesktopImage from "@images/DesktopScreenshot.png";
+import DesktopImage from "@images/DesktopScreen.png";
 
 const Hero = () => {
     return (
         <>
             <section
                 id="home"
-                className="relative overflow-hidden bg-primary pt-[120px] md:pt-[130px] lg:pt-[160px]"
+                style={{ backgroundColor: 'var(--color-primary)' }}
+                className="relative overflow-hidden pt-[120px] md:pt-[130px] lg:pt-[160px]"
             >
-                <div className="container">
-                    <div className="-mx-4 flex flex-wrap items-center">
-                        <div className="w-full px-4">
+                <div>
+                    <div className="flex flex-wrap">
+                        <div className="w-full">
                             <div
-                                className="hero-content wow fadeInUp mx-auto max-w-[780px] text-center"
+                                className="hero-content wow fadeInUp mx-auto text-center"
                                 data-wow-delay=".2s"
                             >
                                 <h1 className="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
@@ -26,9 +27,17 @@ const Hero = () => {
                                     <li>
                                         <Link
                                             href="https://app.onvione.ru"
-                                            className="inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-black shadow-1 transition duration-300 ease-in-out hover:bg-gray-2"
+                                            className="inline-flex items-center justify-center rounded-md bg-[#fff] px-7 py-[14px] text-center text-base font-medium text-[#000] shadow-1 transition duration-300 ease-in-out hover:bg-gray-2"
                                         >
-                                            Запросить демо
+                                            Start
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link
+                                            href="/about"
+                                            className="inline-flex items-center justify-center text-center rounded-md bg-primary px-7 py-[14px] text-base font-medium text-white duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
+                                        >
+                                            Learn More
                                         </Link>
                                     </li>
                                 </ul>

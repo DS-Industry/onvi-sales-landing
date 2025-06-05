@@ -19,16 +19,10 @@ const menuData = [
     newTab: false,
   },
   {
-    id: 5,
+    id: 4,
     title: "Contact",
     path: "/contact",
     newTab: false,
-  },
-  {
-    id: 5,
-    title: "App Display",
-    path: "/display",
-    newTab: false,
-  },
+  }
 ];
 export default menuData;

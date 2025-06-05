@@ -10,7 +10,6 @@ export default function Footer() {
         <footer className="bg-[#1e1e1e] text-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Column 1 - Logo and Description */}
                     <div>
                         <div className="flex items-center mb-4">
                             <Image
@@ -53,28 +52,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 3 - Legal */}
                     <div>
-                        <h3 className="text-xl font-semibold mb-4">Информация</h3>
-                        <div className="flex flex-col">
-                            <Link
-                                href="https://docs.google.com/document/d/1H5DFxDJfFBxK6wNK3iIydC9Qp1zaQsuSxZkjaPcCVyc/edit?tab=t.0"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className="text-orange-500 hover:text-orange-400 transition"
-                            >
-                                Политика конфиденциальности
-                            </Link>
-                            <Link
-                                href="https://docs.google.com/document/d/1z9LIxI5UDnK9kuGBf5ZqvUPaophCr4JfVDNayFz1zLs/edit?usp=sharing"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                                className="text-orange-500 hover:text-orange-400 transition"
-                            >
-                                Удаление данных
-                            </Link>
-                        </div>
-
                     </div>
                 </div>
 
