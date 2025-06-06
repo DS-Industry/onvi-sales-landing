@@ -1,6 +1,6 @@
 "use client";
 
-import { Input, Button, Form as AntForm } from "antd";
+import { Button, Form as AntForm } from "antd";
 import { useForm, Controller } from "react-hook-form";
 
 const Contact = () => {
@@ -21,7 +21,7 @@ const Contact = () => {
   return (
     <section id="contact" className="relative py-20 md:py-[120px]">
       <div className="absolute left-0 top-0 -z-[1] h-full w-full bg-gray-100"></div>
-      <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-gray-200 lg:h-[45%] xl:h-1/2"></div>
+      <div className="absolute left-0 top-0 -z-[1] h-1/2 w-full bg-gray-700 lg:h-[45%] xl:h-1/2"></div>
       <div className="container px-4">
         <div className="flex flex-wrap items-center">
           <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
@@ -83,74 +83,76 @@ const Contact = () => {
             </div>
           </div>
           <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <div className="rounded-lg bg-gray-300 px-8 py-10 shadow-testimonial sm:px-10 sm:py-12 md:p-[60px]">
-              <h3 className="mb-8 text-2xl font-semibold text-black md:text-[28px]">
+            <div className="rounded-lg bg-gray-800 px-8 py-10 shadow-testimonial sm:px-10 sm:py-12 md:p-[60px]">
+              <h3 className="mb-8 text-2xl font-semibold text-white md:text-[28px]">
                 Send us a Message
               </h3>
 
               <AntForm layout="vertical" onFinish={handleSubmit(onSubmit)}>
-                <AntForm.Item
-                  label={<span className="text-black">Full Name*</span>}
-                  name="fullName"
-                >
+                <AntForm.Item label={<span className="text-white">Full Name*</span>}>
                   <Controller
                     name="fullName"
                     control={control}
                     rules={{ required: "Full name is required" }}
-                    render={({ field }) => <Input
-                      {...field}
-                      placeholder="Adam Gelius"
-                    />}
+                    render={({ field }) => (
+                      <input
+                        {...field}
+                        placeholder="Adam Gelius"
+                        className="w-full border-0 border-b border-white bg-transparent focus:outline-none focus:border-primary text-white py-2"
+                      />
+                    )}
                   />
                 </AntForm.Item>
 
-                <AntForm.Item
-                  label={<span className="text-black">Email*</span>}
-                  name="email"
-                >
+                <AntForm.Item label={<span className="text-white">Email*</span>}>
                   <Controller
                     name="email"
                     control={control}
                     rules={{ required: "Email is required" }}
-                    render={({ field }) => <Input {...field} placeholder="example@yourmail.com" />}
+                    render={({ field }) => (
+                      <input
+                        {...field}
+                        type="email"
+                        placeholder="example@yourmail.com"
+                        className="w-full border-0 border-b border-white bg-transparent focus:outline-none focus:border-primary text-white py-2"
+                      />
+                    )}
                   />
                 </AntForm.Item>
 
-                <AntForm.Item 
-                  label={<span className="text-black">Phone*</span>}
-                 name="phone"
-                 >
+                <AntForm.Item label={<span className="text-white">Phone*</span>}>
                   <Controller
                     name="phone"
                     control={control}
                     rules={{ required: "Phone number is required" }}
-                    render={({ field }) => <Input {...field} placeholder="+885 1254 5211 552" />}
+                    render={({ field }) => (
+                      <input
+                        {...field}
+                        placeholder="+885 1254 5211 552"
+                        className="w-full border-0 border-b border-white bg-transparent focus:outline-none focus:border-primary text-white py-2"
+                      />
+                    )}
                   />
                 </AntForm.Item>
 
-                <AntForm.Item 
-                  label={<span className="text-black">Message*</span>}
-                name="message">
+                <AntForm.Item label={<span className="text-white">Message*</span>}>
                   <Controller
                     name="message"
                     control={control}
                     rules={{ required: "Message is required" }}
                     render={({ field }) => (
-                      <Input.TextArea
+                      <textarea
                         {...field}
                         rows={4}
                         placeholder="Type your message here"
+                        className="w-full border-0 border-b border-white bg-transparent focus:outline-none focus:border-primary text-white py-2"
                       />
                     )}
                   />
                 </AntForm.Item>
 
                 <AntForm.Item>
-                  <Button
-                    type="primary"
-                    htmlType="submit"
-                    className="w-full"
-                  >
+                  <Button type="primary" htmlType="submit" className="w-full">
                     Send
                   </Button>
                 </AntForm.Item>

@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import OnviImage from "@images/onvi_blue.png";
 
 import menuData from "./menuData";
+import path from "path";
 
 const Header = () => {
 
@@ -66,7 +67,7 @@ const Header = () => {
                     height={30}
                     className="header-logo w-full"
                   />
-                  <div className="text-white font-semibold text-xs items-center justify-center flex ml-2">БИЗНЕС</div>
+                  <div className={`${sticky ? "text-white" : pathUrl !== "/" ? "text-white" : "text-[#fff]"} font-semibold text-xs items-center justify-center flex ml-2`}>БИЗНЕС</div>
                 </div>
               </Link>
             </div>
@@ -81,31 +82,32 @@ const Header = () => {
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[7px] rotate-45" : " "
                       } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
-                        ? "bg-dark dark:bg-white"
-                        : "bg-white"
+                        ? "bg-white"
+                        : "bg-[#fff]"
                       }`}
                   />
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? "opacity-0 " : " "
                       } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
-                        ? "bg-dark dark:bg-white"
-                        : "bg-white"
+                        ? "bg-white"
+                        : "bg-[#fff]"
                       }`}
                   />
                   <span
                     className={`relative my-1.5 block h-0.5 w-[30px] transition-all duration-300 ${navbarOpen ? " top-[-8px] -rotate-45" : " "
                       } ${pathUrl !== "/" && "!bg-dark dark:!bg-white"} ${pathUrl === "/" && sticky
-                        ? "bg-dark dark:bg-white"
-                        : "bg-white"
+                        ? "bg-white"
+                        : "bg-[#fff]"
                       }`}
                   />
                 </button>
                 <nav
                   id="navbarCollapse"
-                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-gray-500 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 lg:dark:bg-transparent ${navbarOpen
-                    ? "visibility top-full opacity-100"
+                  className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 px-6 py-4 duration-300 lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${navbarOpen
+                    ? "visibility top-full opacity-100 text-black"
                     : "invisible top-[120%] opacity-0"
                     }`}
+                    style={{ backgroundColor: "var(--color-primary)" }}
                 >
                   <ul className="block lg:ml-8 lg:flex lg:gap-x-8 xl:ml-14 xl:gap-x-12">
                     {menuData.map((menuItem, index) =>
@@ -116,7 +118,7 @@ const Header = () => {
                               onClick={navbarToggleHandler}
                               scroll={false}
                               href={menuItem.path}
-                              className={`ud-menu-scroll flex py-2 text-base text-body-color group-hover:text-primary dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${pathUrl === menuItem?.path && "text-primary"
+                              className={`ud-menu-scroll flex py-2 text-base text-white group-hover:text-primary dark:group-hover:text-primary lg:inline-flex lg:px-0 lg:py-6 ${pathUrl === menuItem?.path && "text-black"
                                 }`}
                             >
                               {menuItem.title}
@@ -126,11 +128,11 @@ const Header = () => {
                               scroll={false}
                               href={menuItem.path}
                               className={`ud-menu-scroll flex py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${sticky
-                                ? "text-body-color group-hover:text-primary dark:group-hover:text-primary"
-                                : "text-body-color"
+                                ? "text-white group-hover:text-primary dark:group-hover:text-primary"
+                                : "text-[#fff]"
                                 } ${pathUrl === menuItem?.path &&
                                 sticky &&
-                                "!text-primary"
+                                "text-[#0B68E1]"
                                 }`}
                             >
                               {menuItem.title}
@@ -166,7 +168,7 @@ const Header = () => {
                             <button
                               onClick={() => handleSubmenu(index)}
                               className={`ud-menu-scroll flex items-center justify-between py-2 text-base lg:inline-flex lg:px-0 lg:py-6 ${sticky
-                                ? "text-dark group-hover:text-primary dark:text-white dark:group-hover:text-primary"
+                                ? "text-white group-hover:text-primary dark:group-hover:text-primary"
                                 : "text-white"
                                 }`}
                             >
@@ -200,7 +202,7 @@ const Header = () => {
                 <button
                   aria-label="theme toggler"
                   onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  className="flex h-8 w-8 items-center justify-center text-body-color duration-300"
+                  className="flex h-8 w-8 items-center justify-center text-[#fff] duration-300"
                 >
                   <span>
                     {theme === "dark" ? <svg
@@ -212,7 +214,7 @@ const Header = () => {
                       :
                       <svg
                         viewBox="0 0 23 23"
-                        className={`h-[30px] w-[30px] fill-current text-white cursor-pointer ${!sticky && pathUrl === "/" && "text-white"
+                        className={`h-[30px] w-[30px] fill-current text-[#fff] cursor-pointer ${(sticky || pathUrl !== "/") && "text-white"
                           }`}
                       >
                         <g clipPath="url(#clip0_40_125)">
@@ -227,13 +229,13 @@ const Header = () => {
                     <>
                       <Link
                         href="https://app.onvione.ru/login"
-                        className="px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white"
+                        className="px-7 py-3 text-base font-medium hover:opacity-70 text-white"
                       >
                         Sign In
                       </Link>
                       <Link
                         href="https://app.onvione.ru/register"
-                        className="rounded-lg bg-primary px-6 py-3 text-base font-medium text-white duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
+                        className="rounded-lg bg-primary px-6 py-3 text-base text-white font-medium text-white duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
                       >
                         Sign Up
                       </Link>
@@ -242,16 +244,16 @@ const Header = () => {
                     <>
                       <Link
                         href="https://app.onvione.ru/login"
-                        className={`px-7 py-3 text-base font-medium hover:opacity-70 ${sticky ? "text-dark dark:text-white" : "text-white"
+                        className={`px-7 py-3 text-base font-medium hover:opacity-70 ${sticky ? "text-white" : "text-[#fff]"
                           }`}
                       >
                         Sign In
                       </Link>
                       <Link
                         href="https://app.onvione.ru/register"
-                        className={`rounded-lg px-6 py-3 text-base font-medium text-white duration-300 ease-in-out ${sticky
-                          ? "bg-primary hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
-                          : "bg-white/10 hover:bg-white/20"
+                        className={`rounded-lg px-6 py-3 text-base font-medium duration-300 ease-in-out ${sticky
+                          ? "bg-black/50 hover:bg-black/90 text-white"
+                          : "bg-black/10 hover:bg-white/20 text-[#fff]"
                           }`}
                       >
                         Sign Up

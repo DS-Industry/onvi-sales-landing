@@ -5,7 +5,8 @@ import LogoIMG from '@images/LogoIMG.jpg';
 const Footer = () => {
   return (
     <footer
-      className="wow fadeInUp relative z-10 bg-[#090E34] pt-20 lg:pt-[100px]"
+      className="wow fadeInUp relative z-10 pt-20 lg:pt-[100px]"
+      style={{ backgroundColor: "var(--color-primary)" }}
       data-wow-delay=".15s"
     >
       <div className="container">

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Image1 from "@images/about/about-image-01.jpg";
-import Image2 from "@images/about/about-image-02.jpg";
+import Image2 from "@images/CarWash.webp";
 
 const About = () => {
   return (
@@ -25,7 +25,7 @@ const About = () => {
                 <Link
                   href="/"
                   style={{ backgroundColor: "var(--color-primary)" }}
-                  className="inline-flex items-center justify-center rounded-md px-7 py-3 text-center text-base font-medium text-white duration-300 hover:bg-primary/90"
+                  className="inline-flex items-center justify-center rounded-md px-7 py-3 text-center text-base font-medium text-[#fff] duration-300 hover:bg-primary/90"
                 >
                   Know More
                 </Link>
@@ -62,13 +62,13 @@ const About = () => {
                     className="relative z-10 mb-4 flex items-center justify-center overflow-hidden px-6 py-12 sm:mb-8 sm:h-[160px] sm:p-5 lg:mb-4 xl:mb-8"
                   >
                     <div>
-                      <span className="block text-5xl font-extrabold text-white">
+                      <span className="block text-5xl font-extrabold text-[#fff]">
                         09
                       </span>
-                      <span className="block text-base font-semibold text-white">
+                      <span className="block text-base font-semibold text-[#fff]">
                         We have
                       </span>
-                      <span className="block text-base font-medium text-white text-opacity-70">
+                      <span className="block text-base font-medium text-[#fff] text-opacity-70">
                         Years of experience
                       </span>
                     </div>

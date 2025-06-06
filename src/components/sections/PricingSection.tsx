@@ -54,7 +54,7 @@ const PricingSection = forwardRef<HTMLDivElement, PricingSectionProps>((props, r
         id="pricing"
         className="relative overflow-hidden pb-12 pt-20 dark:bg-dark lg:pb-[90px] lg:pt-[120px]"
       >
-        <div className="container">
+        <div>
           <div className="mb-[60px]">
             <SectionTitle
               subtitle="Таблица тарифов"
@@ -67,7 +67,7 @@ const PricingSection = forwardRef<HTMLDivElement, PricingSectionProps>((props, r
             {plans.map((plan, index) => (
               <div
                 key={index}
-                className={`relative bg-gray-50 rounded-lg p-8 flex flex-col justify-between transition-all duration-300 w-full sm:w-[300px] md:w-[350px] lg:w-[400px] min-h-[500px]`}
+                className={`relative bg-gray-800 rounded-lg p-8 flex flex-col justify-between transition-all duration-300 w-full sm:w-[300px] md:w-[350px] lg:w-[400px] min-h-[500px]`}
               >
                 {plan.highlighted && (
                   <div className="absolute -right-12 top-14 rotate-90 bg-blue-600 text-white text-sm font-medium px-2 py-1 pr-8 rounded-r">
