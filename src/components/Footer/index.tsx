@@ -14,14 +14,15 @@ const Footer = () => {
           {/* Column 1: Logo */}
           <div className="w-full px-4 sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3">
             <div className="mb-10 w-full">
-              <Link href="/" className="mb-6 inline-block max-w-[160px]">
+              <Link href="/" className="mb-6 max-w-[160px] flex items-center space-x-2">
                 <Image
                   src={LogoIMG}
                   alt="logo"
-                  width={100}
+                  width={30}
                   height={30}
                   className="max-w-full rounded-lg"
                 />
+                <div className="text-[#fff]">ONVI</div>
               </Link>
               <p className="mb-8 max-w-[270px] text-base text-[#fff]">
                 Удобное приложение для поиска моек самообслуживания рядом с вами. Получайте кешбэк и экономьте на каждой мойке.
@@ -36,15 +37,15 @@ const Footer = () => {
               <ul>
                 <li>
                   <div className="mb-3 inline-block text-base text-[#fff] hover:text-primary">
-                    info@yourdomain.com
+                    Телефон поддержки: +7(800)250-20-19
                   </div>
                 </li>
                 <li>
                   <div className="mb-3 inline-block text-base text-[#fff] hover:text-primary">
-                    contact@yourdomain.com
+                    Почта поддержки: support@onvione.ru
                   </div>
                 </li>
-                <li>
+                {/* <li>
                   <div className="mb-3 inline-block text-base text-[#fff] hover:text-primary">
                     +999 999 9999
                   </div>
@@ -53,7 +54,7 @@ const Footer = () => {
                   <div className="mb-3 inline-block text-base text-[#fff] hover:text-primary">
                     mail to: contact@sales.com
                   </div>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

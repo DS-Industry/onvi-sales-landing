@@ -35,7 +35,7 @@ const Hero = () => {
                                     <li>
                                         <Link
                                             href="/about"
-                                            className="inline-flex items-center justify-center text-center rounded-md bg-primary px-7 py-[16px] text-base font-medium text-[#fff] duration-300 ease-in-out hover:bg-primary/90 dark:bg-white/10 dark:hover:bg-white/20"
+                                            className="inline-flex items-center justify-center text-center rounded-md bg-primary px-7 py-[16px] text-base font-medium text-[#fff] duration-300 ease-in-out bg-black/10 hover:bg-white/10"
                                         >
                                             Learn More
                                         </Link>
